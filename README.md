@@ -1,6 +1,6 @@
 # 🏭 Bukit Baja Anugrah — Manufacturing Resource Planning (MRP) System
 
-### System Design Case Study | Built from Scratch · 2013–2016
+### System Design Case Study | Built from Scratch
 
 > **Role:** Co-Founder & CTO, CV BIOS
 > **Client:** Bukit Baja Anugrah — Steel Pipe Manufacturer

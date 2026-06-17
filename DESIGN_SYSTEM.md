@@ -1640,7 +1640,7 @@ graph TD
 │              │  MySQL:3306   │                            │
 │              │  PHP 5.x      │                            │
 │              │  ┌──────────┐ │                            │
-│              │  │hmodal    │ │  ◀── Slitter Calculator    │
+│              │  │hmodal    │ │  <── Slitter Calculator    │
 │              │  │Engine v2 │ │      hitungsemuav2.php     │
 │              │  └──────────┘ │                            │
 │              └───────────────┘                            │
@@ -1677,7 +1677,7 @@ graph TD
 │  Berat Coil: 5000 Kg │    │  ────────────────────    │    │  Berat : 5,000.00 Kg         │
 │  Lebar Coil: 1250 mm │    │  1. Pisahkan PRIMER vs   │    │  Lebar : 1,250.00 mm         │
 │  Slitter: [75, 90.5, │    │     SEKUNDER             │    │  Sisa  : 3.00 mm (0.24%)     │
-│    140, 185, 112,    │ ──▶│  2. Sort PRIMER desc     │ ──▶│                              │
+│    140, 185, 112,    │ ──>│  2. Sort PRIMER desc     │ ──>│                              │
 │    ...] (10 bh)      │    │  3. Untuk tiap PRIMER:   │    │  ┌────────┬───┬────┬─────┐   │
 │  Primer: [140, 185]  │    │     max_qty=floor(..)    │    │  │Slit    │Qty│Lbr │Kg   │   │
 │                      │    │     Loop qty max→1       │    │  ├────────┼───┼────┼─────┤   │

@@ -26,8 +26,8 @@
 graph TD
     ADMIN["👤 Admin / IT"]
 
-    UC26["Kelola Pengguna &amp; Role"]
-    UC27["Kelola Menu &amp; Permission"]
+    UC26["Kelola Pengguna & Role"]
+    UC27["Kelola Menu & Permission"]
     UC28["Kelola Master Data"]
     UC31["Kelola Shift Kerja"]
     UC32["Kelola Sparepart"]
@@ -174,16 +174,16 @@ graph TD
 
 ### Aktor & Deskripsi
 
-| Aktor | Deskripsi | Hak Akses |
-|-------|-----------|-----------|
-| **Admin / IT** | Mengelola sistem, pengguna, role, dan menu | `r,c,u,d` all modules |
-| **PPIC / Planner** | Merencanakan order, produksi, slitting, dan kalkulasi | `r,c,u,d,approve` |
-| **Operator Produksi** | Menjalankan produksi & input data QC, hitung modal slitter | `r,c,u` produksi |
-| **QC Inspector** | Memvalidasi kualitas hasil produksi | `r,c,u` QC |
-| **Staff Gudang** | Mengelola stok & mutasi inventory | `r,c,u` gudang |
-| **Staff Packing** | Mencatat proses packing | `r,c,u` packing |
-| **Staff Pengiriman** | Membuat surat jalan & kirim barang | `r,c,u,p` pengiriman |
-| **Manajer** | Monitoring laporan & approval | `r,p,approve` all |
+| Aktor                       | Deskripsi                                                  | Hak Akses               |
+| --------------------------- | ---------------------------------------------------------- | ----------------------- |
+| **Admin / IT**        | Mengelola sistem, pengguna, role, dan menu                 | `r,c,u,d` all modules |
+| **PPIC / Planner**    | Merencanakan order, produksi, slitting, dan kalkulasi      | `r,c,u,d,approve`     |
+| **Operator Produksi** | Menjalankan produksi & input data QC, hitung modal slitter | `r,c,u` produksi      |
+| **QC Inspector**      | Memvalidasi kualitas hasil produksi                        | `r,c,u` QC            |
+| **Staff Gudang**      | Mengelola stok & mutasi inventory                          | `r,c,u` gudang        |
+| **Staff Packing**     | Mencatat proses packing                                    | `r,c,u` packing       |
+| **Staff Pengiriman**  | Membuat surat jalan & kirim barang                         | `r,c,u,p` pengiriman  |
+| **Manajer**           | Monitoring laporan & approval                              | `r,p,approve` all     |
 
 ---
 
@@ -1304,16 +1304,16 @@ graph TD
 
 ### 5.3 Data Stores Description
 
-| Data Store | Description | Key Tables |
-|-----------|-------------|------------|
-| **D1: Master Data** | Reference/configuration data | `mt_customer`, `mt_producer`, `mt_supplier`, `mt_crew`, `mt_engine`, `mt_warehouse`, `mt_cat_base`, `mt_sparepart`, `sys_comp` |
-| **D2: Order Data** | Customer orders & BOM | `dt_order`, `dt_order_detail`, `dt_order_detail_bom` |
-| **D3: Production Data** | Schedules & execution | `dt_production_sched`, `dt_production_process`, `dt_jprod`, `dt_jprod_item` |
-| **D4: QC Data** | Quality inspection results | `dt_cutting`, `dt_cutting_downtime`, `dt_accumulator`, `dt_welding`, `dt_speed` |
-| **D5: Inventory Data** | All product stocks | `dt_stock_mocoil`, `dt_stock_slcoil`, `dt_stock_plat`, `dt_stok_pipa` |
-| **D6: Shipping Data** | Delivery documents | `dt_surat_jalan`, `dt_surat_jalan_pipa`, `dt_sj_pipa`, `dt_sj_baru`, `dt_tanda_terima`, `dt_packing_pipa`, `dt_pak_baru` |
-| **D7: User & Role Data** | Authentication & authorization | `pengguna`, `master_role`, `master_menu`, `role_menu` |
-| **D8: Warehouse Movement** | Inventory mutations | `dt_stok_gudang` |
+| Data Store                       | Description                    | Key Tables                                                                                                                                       |
+| -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **D1: Master Data**        | Reference/configuration data   | `mt_customer`, `mt_producer`, `mt_supplier`, `mt_crew`, `mt_engine`, `mt_warehouse`, `mt_cat_base`, `mt_sparepart`, `sys_comp` |
+| **D2: Order Data**         | Customer orders & BOM          | `dt_order`, `dt_order_detail`, `dt_order_detail_bom`                                                                                       |
+| **D3: Production Data**    | Schedules & execution          | `dt_production_sched`, `dt_production_process`, `dt_jprod`, `dt_jprod_item`                                                              |
+| **D4: QC Data**            | Quality inspection results     | `dt_cutting`, `dt_cutting_downtime`, `dt_accumulator`, `dt_welding`, `dt_speed`                                                        |
+| **D5: Inventory Data**     | All product stocks             | `dt_stock_mocoil`, `dt_stock_slcoil`, `dt_stock_plat`, `dt_stok_pipa`                                                                    |
+| **D6: Shipping Data**      | Delivery documents             | `dt_surat_jalan`, `dt_surat_jalan_pipa`, `dt_sj_pipa`, `dt_sj_baru`, `dt_tanda_terima`, `dt_packing_pipa`, `dt_pak_baru`           |
+| **D7: User & Role Data**   | Authentication & authorization | `pengguna`, `master_role`, `master_menu`, `role_menu`                                                                                    |
+| **D8: Warehouse Movement** | Inventory mutations            | `dt_stok_gudang`                                                                                                                               |
 
 ---
 
@@ -1611,26 +1611,26 @@ graph TD
 
 ### Deployment Stack Detail
 
-| Layer | Component | Version | Purpose |
-|-------|-----------|---------|---------|
-| **OS** | Windows | - | Server operating system |
-| **Web Server** | Apache (XAMPP) | 2.x | HTTP request handling |
-| **Runtime** | PHP | 5.x | Server-side scripting, recursive calc engine |
-| **Database** | MySQL | 5.5.32 | Data persistence |
-| **Frontend** | Bootstrap + jQuery | 2.3.2 | Responsive UI, AJAX calculator |
-| **PDF** | html2pdf | 4.03 | Document generation |
-| **Network** | LAN Internal | TCP/IP | Intranet access only |
+| Layer                | Component          | Version | Purpose                                      |
+| -------------------- | ------------------ | ------- | -------------------------------------------- |
+| **OS**         | Windows            | -       | Server operating system                      |
+| **Web Server** | Apache (XAMPP)     | 2.x     | HTTP request handling                        |
+| **Runtime**    | PHP                | 5.x     | Server-side scripting, recursive calc engine |
+| **Database**   | MySQL              | 5.5.32  | Data persistence                             |
+| **Frontend**   | Bootstrap + jQuery | 2.3.2   | Responsive UI, AJAX calculator               |
+| **PDF**        | html2pdf           | 4.03    | Document generation                          |
+| **Network**    | LAN Internal       | TCP/IP  | Intranet access only                         |
 
 ### Network Architecture Notes
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                   INTERNAL LAN (192.168.x.x)             │
-│                                                          │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐               │
-│  │  Admin   │  │  PPIC    │  │ Operator │  ...          │
-│  │  PC      │  │  PC      │  │  PC      │               │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘               │
+┌───────────────────────────────────────────────────────────┐
+│                   INTERNAL LAN (192.168.x.x)              │
+│                                                           │
+│  ┌──────────┐   ┌──────────┐   ┌──────────┐               │
+│  │  Admin   │   │  PPIC    │   │ Operator │  ...          │
+│  │  PC      │   │  PC      │   │  PC      │               │
+│  └────┬─────┘   └────┬─────┘   └────┬─────┘               │
 │       │              │              │                     │
 │       └──────────────┼──────────────┘                     │
 │                      │                                    │
@@ -1640,16 +1640,16 @@ graph TD
 │              │  MySQL:3306   │                            │
 │              │  PHP 5.x      │                            │
 │              │  ┌──────────┐ │                            │
-│              │  │hmodal    │ │  ◀── Slitter Calculator   │
-│              │  │Engine v2 │ │      hitungsemuav2.php    │
+│              │  │hmodal    │ │  ◀── Slitter Calculator    │
+│              │  │Engine v2 │ │      hitungsemuav2.php     │
 │              │  └──────────┘ │                            │
 │              └───────────────┘                            │
 │                      │                                    │
 │              ┌───────┴───────┐                            │
-│              │  Network       │                            │
-│              │  Printer       │                            │
+│              │  Network      │                            │
+│              │  Printer      │                            │
 │              └───────────────┘                            │
-└─────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -1662,73 +1662,44 @@ graph TD
 
 ### Komponen
 
-| File | Peran |
-|------|-------|
+| File                                    | Peran                                                                                                                          |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `modul/tool/hitung_modal_slitter.php` | **Frontend UI** — Form input berat coil, lebar coil, 10 baris lebar slitter + checkbox primer, tombol Hitung, AJAX POST |
-| `api.php` (case `hmodal`) | **Router** — Menerima request `act=hmodal`, meneruskan ke engine |
-| `modul/tool/hitungsemuav2.php` | **Calculation Engine v2** — Algoritma rekursif kombinatorial untuk mencari semua kemungkinan potongan optimal |
+| `api.php` (case `hmodal`)           | **Router** — Menerima request `act=hmodal`, meneruskan ke engine                                                      |
+| `modul/tool/hitungsemuav2.php`        | **Calculation Engine v2** — Algoritma rekursif kombinatorial untuk mencari semua kemungkinan potongan optimal           |
 
 ### Alur Kerja
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  INPUT                                                  │
-│  ─────                                                  │
-│  Berat Coil    : 5000 Kg                                │
-│  Lebar Coil    : 1250 mm                                │
-│  Ukuran Slitter: [75, 90.5, 140, 185, 112, ...] (10x)  │
-│  Primer (✓)    : [140, 185]  ← wajib ada di hasil      │
-└─────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│  ALGORITMA (hitungsemuav2.php)                          │
-│  ─────────────────────────                              │
-│  1. Pisahkan ukuran PRIMER vs SEKUNDER                  │
-│  2. Sort PRIMER descending                              │
-│  3. Untuk tiap PRIMER:                                  │
-│     - Hitung max_qty = floor(1250 / ukuran)             │
-│     - Loop qty dari max → 1                             │
-│     - Hitung sisa setelah primer                        │
-│     - Jika sisa < 1% → simpan kombinasi                 │
-│     - Jika tidak → rekursi cari_kombinasi()             │
-│  4. Rekursi: coba tiap SEKUNDER dengan qty menurun      │
-│     - Hanya simpan jika sisa < 1% & >= 4mm              │
-│  5. Deduplikasi semua hasil                              │
-│  6. Hitung berat per slit = (lebar_slit/lebar_coil)     │
-│     × berat_coil                                        │
-└─────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│  OUTPUT (HTML Table)                                    │
-│  ──────                                                 │
-│  Berat Coil   : 5,000.00 Kg                             │
-│  Lebar Coil   : 1,250.00 mm                             │
-│  Sisa         : 3.00 mm                                 │
-│  Persentase   : 0.24 %                                  │
-│                                                         │
-│  ┌────────────┬─────┬──────────────┬────────────┐       │
-│  │ Ukuran Slit│ Qty │ Jumlah Lebar │ Berat (Kg) │       │
-│  ├────────────┼─────┼──────────────┼────────────┤       │
-│  │ 185        │ 4   │ 740          │ 2,960.00   │       │
-│  │ 140        │ 3   │ 420          │ 1,680.00   │       │
-│  │ 90.5       │ 1   │ 90.5         │ 362.00     │       │
-│  └────────────┴─────┴──────────────┴────────────┘       │
-│  TOTAL                         1,250.5 mm   5,002.00 Kg │
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────┐    ┌──────────────────────────┐    ┌──────────────────────────────┐
+│  INPUT               │    │  ALGORITMA               │    │  OUTPUT (HTML Table)         │
+│  ─────               │    │  (hitungsemuav2.php)     │    │  ──────                      │
+│  Berat Coil: 5000 Kg │    │  ────────────────────    │    │  Berat : 5,000.00 Kg         │
+│  Lebar Coil: 1250 mm │    │  1. Pisahkan PRIMER vs   │    │  Lebar : 1,250.00 mm         │
+│  Slitter: [75, 90.5, │    │     SEKUNDER             │    │  Sisa  : 3.00 mm (0.24%)     │
+│    140, 185, 112,    │ ──▶│  2. Sort PRIMER desc     │ ──▶│                              │
+│    ...] (10 bh)      │    │  3. Untuk tiap PRIMER:   │    │  ┌────────┬───┬────┬─────┐   │
+│  Primer: [140, 185]  │    │     max_qty=floor(..)    │    │  │Slit    │Qty│Lbr │Kg   │   │
+│                      │    │     Loop qty max→1       │    │  ├────────┼───┼────┼─────┤   │
+│                      │    │  4. Rekursi: SEKUNDER    │    │  │185     │ 4 │740 │2960 │   │
+│                      │    │     dgn qty menurun      │    │  │140     │ 3 │420 │1680 │   │
+│                      │    │  5. Deduplikasi hasil    │    │  │90.5    │ 1 │90.5│ 362 │   │
+│                      │    │  6. Berat/slit =         │    │  ├────────┴───┴────┴─────┤   │
+│                      │    │     (slit/cl)*berat      │    │  │TOTAL    1250.5   5002 │   │
+│                      │    │                          │    │  └───────────────────────┘   │
+└──────────────────────┘    └──────────────────────────┘    └──────────────────────────────┘
 ```
 
 ### Keunggulan Fitur
 
-| Aspek | Deskripsi |
-|-------|-----------|
-| **Optimasi Waste** | Mencari kombinasi dengan sisa < 1% lebar coil |
-| **Prioritas Primer** | Ukuran yang dicentang WAJIB muncul di setiap hasil |
-| **Eksplorasi Lengkap** | Algoritma rekursif mencoba SEMUA kombinasi yang mungkin |
-| **Real-time** | AJAX-based, hasil langsung muncul tanpa reload halaman |
-| **Akurasi Berat** | Berat dihitung proporsional berdasarkan lebar slit vs lebar coil |
-| **Deduplikasi** | Hasil bersih tanpa kombinasi duplikat |
+| Aspek                        | Deskripsi                                                        |
+| ---------------------------- | ---------------------------------------------------------------- |
+| **Optimasi Waste**     | Mencari kombinasi dengan sisa < 1% lebar coil                    |
+| **Prioritas Primer**   | Ukuran yang dicentang WAJIB muncul di setiap hasil               |
+| **Eksplorasi Lengkap** | Algoritma rekursif mencoba SEMUA kombinasi yang mungkin          |
+| **Real-time**          | AJAX-based, hasil langsung muncul tanpa reload halaman           |
+| **Akurasi Berat**      | Berat dihitung proporsional berdasarkan lebar slit vs lebar coil |
+| **Deduplikasi**        | Hasil bersih tanpa kombinasi duplikat                            |
 
 ### Kompleksitas Algoritma
 
@@ -1742,15 +1713,15 @@ graph TD
 
 ### Architecture Patterns
 
-| Pattern | Implementation |
-|---------|---------------|
-| **Front Controller** | `api.php` acts as single entry point routing based on `act` parameter (including `hmodal`) |
-| **Data-Driven UI** | `form_entry_std`, `form_attr`, `form_list` tables define form behavior at runtime |
-| **Recursive Combinatorial** | `hitungsemuav2.php` uses depth-first recursive search for cutting optimization |
-| **Soft Delete** | All tables use `del` (TINYINT) flag, never hard deletes |
-| **Audit Trail** | Every record has `create_user`, `create_date`, `edit_user`, `edit_date` |
-| **RBAC** | Role-Based Access Control via `master_role` → `role_menu` with `r,c,u,d,p,approve` permissions |
-| **Module-Based Structure** | Each business domain in `modul/[module_name]/` with isolated scripts |
+| Pattern                           | Implementation                                                                                        |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Front Controller**        | `api.php` acts as single entry point routing based on `act` parameter (including `hmodal`)      |
+| **Data-Driven UI**          | `form_entry_std`, `form_attr`, `form_list` tables define form behavior at runtime               |
+| **Recursive Combinatorial** | `hitungsemuav2.php` uses depth-first recursive search for cutting optimization                      |
+| **Soft Delete**             | All tables use `del` (TINYINT) flag, never hard deletes                                             |
+| **Audit Trail**             | Every record has `create_user`, `create_date`, `edit_user`, `edit_date`                       |
+| **RBAC**                    | Role-Based Access Control via `master_role` → `role_menu` with `r,c,u,d,p,approve` permissions |
+| **Module-Based Structure**  | Each business domain in `modul/[module_name]/` with isolated scripts                                |
 
 ### API Routing Pattern
 

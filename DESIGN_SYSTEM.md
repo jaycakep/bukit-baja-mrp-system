@@ -20,84 +20,40 @@
 
 ## 1. Use Case Diagram
 
+### 1.1 Admin / IT
+
 ```mermaid
 graph TD
-    subgraph "Baja MRP System"
-        %% Order Management
-        UC1["Kelola Order Customer"]
-        UC2["Input Bill of Materials"]
-        UC3["Tutup Order"]
-
-        %% Production
-        UC4["Jadwalkan Produksi"]
-        UC5["Eksekusi Job Produksi"]
-        UC6["Catat Hasil QC Cutting"]
-        UC7["Catat Downtime Mesin"]
-        UC8["Monitoring Akumulator"]
-
-        %% Slitting
-        UC9["Buat Order Slitting"]
-        UC10["Proses Slitter"]
-        UC11["Catat Slit Coil MTS"]
-
-        %% Plate
-        UC12["Proses Plat MTS"]
-
-        %% Packing
-        UC13["Packing Produk"]
-        UC14["Packing Pipa"]
-
-        %% Inventory
-        UC15["Kelola Stok Mother Coil"]
-        UC16["Kelola Stok Slit Coil"]
-        UC17["Kelola Stok Plat"]
-        UC18["Kelola Stok Pipa"]
-        UC19["Catat Mutasi Gudang"]
-
-        %% Shipping
-        UC20["Buat Surat Jalan"]
-        UC21["Buat SJ Internal"]
-        UC22["Buat SJ Pipa"]
-        UC23["Proses Retur"]
-        UC24["Catat Tanda Terima"]
-        UC25["Kelola SJ Kosongan"]
-
-        %% System
-        UC26["Kelola Pengguna & Role"]
-        UC27["Kelola Menu & Permission"]
-        UC28["Kelola Master Data"]
-        UC29["Generate Laporan"]
-        UC30["Cetak / Export PDF/Excel"]
-        UC31["Kelola Shift Kerja"]
-        UC32["Kelola Sparepart"]
-
-        %% Reporting
-        UC33["Laporan Produksi"]
-        UC34["Laporan Inventory"]
-        UC35["Laporan Pengiriman"]
-
-        %% Tools
-        UC36["🔧 Hitung Modal Slitter"]
-    end
-
-    %% Actors
     ADMIN["👤 Admin / IT"]
-    PPIC["👤 PPIC / Planner"]
-    OPERATOR["👤 Operator Produksi"]
-    QC["👤 QC Inspector"]
-    GUDANG["👤 Staff Gudang"]
-    SHIPPING["👤 Staff Pengiriman"]
-    MANAGER["👤 Manajer"]
-    PACKING["👤 Staff Packing"]
 
-    %% Admin
+    UC26["Kelola Pengguna &amp; Role"]
+    UC27["Kelola Menu &amp; Permission"]
+    UC28["Kelola Master Data"]
+    UC31["Kelola Shift Kerja"]
+    UC32["Kelola Sparepart"]
+
     ADMIN --> UC26
     ADMIN --> UC27
     ADMIN --> UC28
     ADMIN --> UC31
     ADMIN --> UC32
+```
 
-    %% PPIC
+### 1.2 PPIC / Planner
+
+```mermaid
+graph TD
+    PPIC["👤 PPIC / Planner"]
+
+    UC1["Kelola Order Customer"]
+    UC2["Input Bill of Materials"]
+    UC3["Tutup Order"]
+    UC4["Jadwalkan Produksi"]
+    UC9["Buat Order Slitting"]
+    UC10["Proses Slitter"]
+    UC11["Catat Slit Coil MTS"]
+    UC36["🔧 Hitung Modal Slitter"]
+
     PPIC --> UC1
     PPIC --> UC2
     PPIC --> UC3
@@ -106,19 +62,54 @@ graph TD
     PPIC --> UC10
     PPIC --> UC11
     PPIC --> UC36
+```
 
-    %% Operator
+### 1.3 Operator Produksi
+
+```mermaid
+graph TD
+    OPERATOR["👤 Operator Produksi"]
+
+    UC5["Eksekusi Job Produksi"]
+    UC6["Catat Hasil QC Cutting"]
+    UC7["Catat Downtime Mesin"]
+    UC8["Monitoring Akumulator"]
+    UC12["Proses Plat MTS"]
+
     OPERATOR --> UC5
     OPERATOR --> UC6
     OPERATOR --> UC7
     OPERATOR --> UC8
     OPERATOR --> UC12
+```
 
-    %% QC
+### 1.4 QC Inspector
+
+```mermaid
+graph TD
+    QC["👤 QC Inspector"]
+
+    UC6["Validasi Hasil QC Cutting"]
+    UC8["Validasi Monitoring Akumulator"]
+
     QC --> UC6
     QC --> UC8
+```
 
-    %% Gudang
+### 1.5 Staff Gudang
+
+```mermaid
+graph TD
+    GUDANG["👤 Staff Gudang"]
+
+    UC15["Kelola Stok Mother Coil"]
+    UC16["Kelola Stok Slit Coil"]
+    UC17["Kelola Stok Plat"]
+    UC18["Kelola Stok Pipa"]
+    UC19["Catat Mutasi Gudang"]
+    UC13["Packing Produk"]
+    UC14["Packing Pipa"]
+
     GUDANG --> UC15
     GUDANG --> UC16
     GUDANG --> UC17
@@ -126,20 +117,54 @@ graph TD
     GUDANG --> UC19
     GUDANG --> UC13
     GUDANG --> UC14
+```
 
-    %% Packing
+### 1.6 Staff Packing
+
+```mermaid
+graph TD
+    PACKING["👤 Staff Packing"]
+
+    UC13["Packing Produk"]
+    UC14["Packing Pipa"]
+
     PACKING --> UC13
     PACKING --> UC14
+```
 
-    %% Shipping
+### 1.7 Staff Pengiriman
+
+```mermaid
+graph TD
+    SHIPPING["👤 Staff Pengiriman"]
+
+    UC20["Buat Surat Jalan"]
+    UC21["Buat SJ Internal"]
+    UC22["Buat SJ Pipa"]
+    UC23["Proses Retur"]
+    UC24["Catat Tanda Terima"]
+    UC25["Kelola SJ Kosongan"]
+
     SHIPPING --> UC20
     SHIPPING --> UC21
     SHIPPING --> UC22
     SHIPPING --> UC23
     SHIPPING --> UC24
     SHIPPING --> UC25
+```
 
-    %% Manager
+### 1.8 Manajer
+
+```mermaid
+graph TD
+    MANAGER["👤 Manajer"]
+
+    UC29["Generate Laporan"]
+    UC30["Cetak / Export PDF/Excel"]
+    UC33["Laporan Produksi"]
+    UC34["Laporan Inventory"]
+    UC35["Laporan Pengiriman"]
+
     MANAGER --> UC29
     MANAGER --> UC30
     MANAGER --> UC33
